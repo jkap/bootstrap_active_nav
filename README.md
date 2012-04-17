@@ -2,6 +2,11 @@
 
 A Rails 3 view helper for generating Bootstrap navbar links with the active tag.
 
+
+```ruby
+gem "bootstrap_active_nav"
+```
+
 To use:
 
 ```ruby
