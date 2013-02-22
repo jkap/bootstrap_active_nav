@@ -1,7 +1,11 @@
 module BootstrapActiveNav
   module ViewHelpers
     def nav_link(link_text, link_path, options = {})
-      class_name = current_page?(link_path) ? 'active' : ''
+      options.reverse_merge!({
+        :active_class_name => "active",
+        :default_class_name => ""
+      })
+      class_name = current_page?(link_path) ? "#{options[:default_class_name]} #{options[:active_class_name]}" : options[:default_class_name]
 
       content_tag(:li, :class => class_name) do
         link_to link_path, options do
